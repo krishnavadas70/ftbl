@@ -1,0 +1,557 @@
+/* ===========================
+   IMPORT FONTS
+=========================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Orbitron:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap');
+
+/* ===========================
+   RESET
+=========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: #0a0a0a;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* ===========================
+   FUTURISTIC NAVBAR
+=========================== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 50px;
+    background: linear-gradient(90deg, #000, #0d0d1a, #000);
+    border-bottom: 3px solid #1a4fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    animation: slideDown 0.8s ease forwards;
+}
+
+/* LOGO */
+.logo {
+    font-size: 42px;
+    font-family: "UnifrakturCook", cursive;
+    color: #e60023;
+    letter-spacing: 5px;
+    text-shadow: 0 0 12px rgba(255, 0, 60, 0.6);
+}
+
+/* MENU BUTTON */
+.menu-btn {
+    font-size: 32px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-family: "Orbitron", sans-serif;
+    transition: .3s ease;
+}
+
+.menu-btn:hover {
+    color: #1a4fff;
+    transform: scale(1.15);
+}
+
+/* DROPDOWN */
+.menu-container {
+    position: relative;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: rgba(0,0,0,0.85);
+    border-radius: 8px;
+    border: 2px solid #1a4fff;
+    width: 170px;
+    text-align: right;
+    padding: 10px 0;
+    box-shadow: 0 0 15px rgba(26, 79, 255, .5);
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease-in-out;
+}
+
+.dropdown.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.dropdown a {
+    display: block;
+    padding: 12px 18px;
+    text-decoration: none;
+    color: white;
+    font-family: "Orbitron", sans-serif;
+    font-size: 15px;
+    transition: all 0.2s ease;
+}
+
+.dropdown a:hover {
+    background: rgba(255, 255, 255, 0.15);
+    padding-right: 25px;
+    color: #1a4fff;
+}
+
+/* ===========================
+   HERO SECTION
+=========================== */
+.hero {
+    height: 100vh;
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.65),
+        rgba(0, 0, 0, 0.65)
+    ), url("../images/stadium.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    animation: slowZoom 18s ease-in-out infinite alternate;
+}
+
+.hero-content {
+    animation: riseUp 1.3s ease forwards;
+}
+
+.hero h2 {
+    font-size: 62px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: white;
+    text-shadow: 0 0 18px rgba(255, 255, 255, 0.4);
+}
+
+.hero p {
+    font-size: 22px;
+    margin-top: 12px;
+    margin-bottom: 30px;
+    color: #d9d9d9;
+}
+
+.hero-button {
+    display: inline-block;
+    padding: 15px 45px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    text-decoration: none;
+    text-align: center;
+    background: linear-gradient(45deg, #e60023, #1a4fff);
+    color: white;
+    box-shadow: 0 0 20px rgba(26, 79, 255, .6);
+    transition: 0.25s ease;
+}
+
+.hero-button:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 25px rgba(230, 0, 35, 0.8);
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+footer {
+    background: #0b0b0b;
+    padding: 20px;
+    text-align: center;
+    border-top: 3px solid #1a4fff;
+    margin-top: 20px;
+}
+
+/* ===========================
+   ANIMATIONS
+=========================== */
+@keyframes slideDown {
+    0% { opacity: 0; transform: translateY(-30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes riseUp {
+    0% { opacity: 0; transform: translateY(40px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slowZoom {
+    0% { background-size: 102%; }
+    100% { background-size: 110%; }
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 15px 20px;
+    }
+
+    .logo {
+        font-size: 32px;
+        margin-bottom: 10px;
+    }
+
+    .menu-btn {
+        font-size: 28px;
+    }
+
+    .dropdown {
+        right: 0;
+        width: 100%;
+        text-align: center;
+        top: 60px;
+        border-radius: 0;
+    }
+
+    .hero h2 {
+        font-size: 42px;
+        padding: 0 10px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    .hero-button {
+        padding: 12px 35px;
+        font-size: 18px;
+    }
+}
+
+
+/* ===========================
+   HERO SECTION
+=========================== */
+.players-hero {
+    height: 40vh;
+    background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url("../images/stadium.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    animation: slowZoom 18s ease-in-out infinite alternate;
+}
+
+.players-hero h2 {
+    font-size: 50px;
+    color: white;
+    text-shadow: 0 0 18px rgba(255,255,255,0.4);
+}
+
+/* ===========================
+   PLAYERS GRID
+=========================== */
+.players-section {
+    background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url("../images/stadium.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 50px 30px;
+}
+
+.player-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+.player-card {
+    width: 220px;
+    background: rgba(0,0,0,0.5);
+    border: 2px solid #1a4fff;
+    border-radius: 12px;
+    cursor: pointer;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(26,79,255,0.5);
+    transition: all 0.4s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.player-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 30px rgba(26,79,255,0.8), 0 0 10px rgba(230,0,35,0.6);
+}
+
+.player-card img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.player-info {
+    padding: 10px 8px 8px 8px;
+    background: rgba(0,0,0,0.7);
+}
+
+.player-card h3 {
+    font-family: "Orbitron", sans-serif;
+    color: #e60023;
+    margin: 10px 0 5px 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.player-card p {
+    color: #d9d9d9;
+    font-size: 13px;
+    padding: 0 10px 10px 10px;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+}
+
+.player-card.active {
+    width: 360px;
+}
+
+.player-card.active p {
+    max-height: 200px;
+    opacity: 1;
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+footer {
+    background: #0b0b0b;
+    padding: 20px;
+    text-align: center;
+    border-top: 3px solid #1a4fff;
+    margin-top: 20px;
+}
+
+/* ===========================
+   ANIMATIONS
+=========================== */
+@keyframes slowZoom {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.05); }
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media (max-width: 1024px) {
+    .player-grid { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 18px; padding: 40px 20px;}
+    .player-card.active { width: 280px; }
+    .players-hero h2 { font-size: 42px; }
+}
+
+@media (max-width: 768px) {
+    header { flex-direction: column; padding: 15px 20px; }
+    .logo { font-size: 32px; margin-bottom: 10px; }
+    .menu-btn { font-size: 28px; }
+    .dropdown { right: 0; width: 100%; text-align: center; top: 60px; border-radius: 0; }
+
+    .players-hero { height: 30vh; }
+    .players-hero h2 { font-size: 32px; padding: 0 10px; }
+    .player-grid { grid-template-columns: 1fr; padding: 30px 10px; gap: 15px; }
+    .player-card { width: 100%; }
+    .player-card.active { width: 100%; }
+}
+
+@media (max-width: 480px) {
+    .player-grid { padding: 20px 5px; gap: 12px; }
+    .players-hero h2 { font-size: 28px; }
+    .player-card h3 { font-size: 14px; }
+    .player-card p { font-size: 12px; }
+}
+/* ==========================
+   TEAM SUMMARY CARDS
+========================== */
+.team-summary {
+    padding: 50px 30px;
+    display: flex;
+    justify-content: center;
+    background: #0a0a0a;
+}
+
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.summary-card {
+    background: rgba(0,0,0,0.85);
+    border: 2px solid #1a4fff;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 0 15px rgba(26,79,255,0.5);
+    transition: all 0.3s ease;
+}
+
+.summary-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(26,79,255,0.8), 0 0 10px rgba(230,0,35,0.6);
+}
+
+.summary-card h3 {
+    color: #e60023;
+    font-family: "Orbitron", sans-serif;
+    margin-bottom: 10px;
+}
+
+.summary-card p {
+    font-size: 18px;
+}
+
+/* ==========================
+   PLAYER STATS CARDS
+========================== */
+.player-stats {
+    padding: 50px 30px;
+    background: #0a0a0a;
+    text-align: center;
+}
+
+.player-stats h2 {
+    color: #1a4fff;
+    margin-bottom: 30px;
+}
+
+.player-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+.player-stats-card {
+    background: rgba(0,0,0,0.85);
+    border: 2px solid #1a4fff;
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(26,79,255,0.5);
+    transition: all 0.3s ease;
+}
+
+.player-stats-card h3 {
+    color: #e60023;
+    font-family: "Orbitron", sans-serif;
+    margin-bottom: 5px;
+}
+
+.player-stats-card p {
+    color: #d9d9d9;
+    font-size: 14px;
+    margin: 4px 0;
+}
+
+/* ==========================
+   STATS TABLE STYLING
+========================== */
+.table-container {
+    overflow-x: auto;
+    padding: 0 30px 50px 30px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(0,0,0,0.7);
+    border: 2px solid #1a4fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(26,79,255,0.5);
+}
+
+table thead {
+    background: rgba(26,79,255,0.8);
+}
+
+table th, table td {
+    padding: 12px 15px;
+    text-align: center;
+    color: white;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+table th {
+    font-family: "Orbitron", sans-serif;
+    font-size: 16px;
+    color: #e60023;
+}
+
+table tr:hover {
+    background: rgba(230,0,35,0.2);
+}
+
+@media (max-width: 768px) {
+    .table-container { padding: 0 15px 30px 15px; }
+    table th, table td { padding: 10px 8px; font-size: 12px; }
+}
+/* ==========================
+   STATS PAGE STADIUM BACKGROUND
+========================== */
+.stats-section {
+    background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+                      url("../images/stadium.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: slowZoom 18s ease-in-out infinite alternate;
+    padding: 50px 30px;
+}
+
+/* Stats Table Styling */
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(0,0,0,0.5); /* semi-transparent black */
+    border: 2px solid #1a4fff;
+    border-radius: 12px;
+    color: white;
+    box-shadow: 0 0 15px rgba(26,79,255,0.5);
+}
+
+table th, table td {
+    padding: 12px 15px;
+    text-align: center;
+}
+
+table th {
+    background: rgba(26, 79, 255, 0.7); /* neon-ish header */
+    color: white;
+    font-family: "Orbitron", sans-serif;
+}
+
+table tr:nth-child(even) {
+    background: rgba(0,0,0,0.35);
+}
+
+table tr:hover {
+    background: rgba(26,79,255,0.3);
+}

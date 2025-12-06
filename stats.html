@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synergy FC | Stats</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <h1 class="logo">Synergy</h1>
+        <div class="menu-container">
+            <button class="menu-btn">&#9776;</button>
+            <div class="dropdown">
+                <a href="index.html">Home</a>
+                <a href="players.html">Players</a>
+                <a href="stats.html">Stats</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- STADIUM BACKGROUND WRAPPER -->
+    <section class="stats-section">
+
+        <!-- HERO TITLE -->
+        <div class="players-hero">
+            <h2>Team Statistics</h2>
+        </div>
+
+        <div class="summary-grid">
+            <div class="summary-card">
+                <h3>Total Goals</h3>
+                <p>125</p>
+            </div>
+            <div class="summary-card">
+                <h3>Total Matches</h3>
+                <p>40</p>
+            </div>
+            <div class="summary-card">
+                <h3>Win %</h3>
+                <p>72%</p>
+            </div>
+            <div class="summary-card">
+                <h3>Clean Sheets</h3>
+                <p>18</p>
+            </div>
+            <div class="summary-card">
+                <h3>Total Defeats</h3>
+                <p>10</p>
+            </div>
+            <div class="summary-card">
+                <h3>Defeat %</h3>
+                <p>25%</p>
+            </div>
+            <div class="summary-card">
+                <h3>Most Goals</h3>
+                <p>FAGUN (15)</p>
+            </div>
+            <div class="summary-card">
+                <h3>Most Assists</h3>
+                <p>Player 2 (8)</p>
+            </div>
+        </div>
+    
+
+
+        <!-- PLAYER STATS TABLE -->
+        <section class="player-stats">
+            <h2>Player Stats</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Player</th>
+                            <th>Position</th>
+                            <th>Appearances</th>
+                            <th>Goals</th>
+                            <th>Assists</th>
+                            <th>Clean Sheets</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>FAGUN</td>
+                            <td>Forward</td>
+                            <td>20</td>
+                            <td>15</td>
+                            <td>3</td>
+                            <td>–</td>
+                        </tr>
+                        <tr>
+                            <td>Player 2</td>
+                            <td>Midfielder</td>
+                            <td>18</td>
+                            <td>5</td>
+                            <td>8</td>
+                            <td>–</td>
+                        </tr>
+                        <tr>
+                            <td>Player 3</td>
+                            <td>Defender</td>
+                            <td>22</td>
+                            <td>2</td>
+                            <td>1</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>KINSHUK</td>
+                            <td>Goalkeeper</td>
+                            <td>20</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>12</td>
+                        </tr>
+                        <tr>
+                            <td>Player 5</td>
+                            <td>Forward</td>
+                            <td>15</td>
+                            <td>10</td>
+                            <td>2</td>
+                            <td>–</td>
+                        </tr>
+                        <tr>
+                            <td>Player 6</td>
+                            <td>Midfielder</td>
+                            <td>14</td>
+                            <td>3</td>
+                            <td>7</td>
+                            <td>–</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2025 Synergy FC. All Rights Reserved.</p>
+    </footer>
+
+    <!-- DROPDOWN SCRIPT -->
+    <script>
+        const menuBtn = document.querySelector('.menu-btn');
+        const dropdown = document.querySelector('.dropdown');
+
+        menuBtn.addEventListener('click', () => {
+            dropdown.classList.toggle('show');
+        });
+    </script>
+
+</body>
+</html>
